@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prespective(3D)</title>
+	<style type="text/css">
+		*{
+			perspective: 600px;
+		}
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			/*အလယ်ရောက်အောင်*/
+
+			border: 1px solid black;
+
+
+		}
+
+		.container{
+			width:500px;
+			background-color: #f4f4f4;
+		}
+
+		.div1{
+			width:250px;
+			height: 100px;
+			background:linear-gradient(black, silver);
+			border: 1px solid black;
+			box-shadow: -5px 0 10px rgba(0,0,0,0.7);
+
+			/*perspective: 200px;*/
+			/*parent can give value (or) unversity*/
+
+			padding: 10px;
+
+			position: relative;
+
+		}
+
+		.div2{
+			width:200px;
+			height: 100px;
+			/*background-color: #e5e5e5;*/
+			border: 1px solid black;
+			background:linear-gradient(black,silver);
+			box-shadow: -5px 0 10px rgba(0,0,0,0.7);
+
+			transform: rotateX(45deg);
+
+			padding: 50px;
+
+			position: absolute;/*//အပေါ်ကိုရောက်‌ောအင*/
+			left: -20px;
+			top: -100%;
+			/*x,yရဲ့ဘယ်ဘက်ထိပ်ကိုရှိလေို့ (-)value ပေးရ*/
+
+			z-index: 1;
+			/*အားလုံးကိုခြုံပြီးအုပ်ချင်ရင်. if many value,top to up */
+
+		}
+		.div3{
+			width:50px;
+			height: 100px;
+			/*background-color: black;*/
+			background: conic-gradient(silver 50%,grey 0%);
+			border-left: 1px dotted;
+			border-right:1px dotted;
+
+			position: absolute;
+			left: 60%;
+			/*top: 17%;*/
+			bottom: 0px;
+		}
+		
+	</style>
+</head>
+<body>
+
+
+	<div class="container">
+
+		<div class="div1">DIV1
+
+			<div class="div2">DIV2
+			
+			</div>
+			<div class="div3">DIV3</div>
+
+		</div>
+		
+	</div>
+
+
+</body>
+</html>
+<!-- 
+		if little,view can see width
+ -->

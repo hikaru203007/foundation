@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prespective(3D)</title>
+	<style type="text/css">
+		*{
+			perspective: 600px;
+		}
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			/*အလယ်ရောက်အောင်*/
+
+			border: 1px solid black;
+
+
+		}
+
+		.container{
+			width:500px;
+			background-color: #f4f4f4;
+		}
+
+		.div1{
+			width:250px;
+			height: 100px;
+			background:linear-gradient(black, silver);
+			border: 1px solid black;
+			box-shadow: -5px 0 10px rgba(0,0,0,0.7);
+
+
+			padding: 10px;
+			margin: auto;
+			position: relative;
+
+			perspective: 600px;
+		}
+
+		.div2{
+			width:200px;
+			height: 100px;
+			/*background-color: #e5e5e5;*/
+			border: 1px solid black;
+			background:linear-gradient(#673ab7,#e91e63);
+			box-shadow: -5px 0 10px rgba(0,0,0,0.7);
+
+			transform: rotateX(45deg);
+
+			padding: 50px;
+
+			position: absolute;/*//အပေါ်ကိုရောက်‌ောအင*/
+			left: -20px;
+			top: -100%;
+			/*x,yရဲ့ဘယ်ဘက်ထိပ်ကိုရှိလေို့ (-)value ပေးရ*/
+
+			z-index: 1;
+			/*အားလုံးကိုခြုံပြီးအုပ်ချင်ရင်. if many value,top to up */
+
+		}
+	
+		
+		.div3{
+			width:50px;
+			height: 100px;
+			background: #fff;
+			border: 1px solid black;
+			box-shadow: 4px 0 10px rgba(0,0,0,0.5);
+
+			position: absolute;
+			right: 130px;
+			bottom: 0px;
+
+			/*z-index: 2;*/
+			
+			transform-origin: left;
+			transition: transform  1s ;
+			
+
+
+		
+		}
+		.div4{
+			width:50px;
+			height: 100px;
+			background: #fff;
+			position: absolute;
+			border: 1px solid black;
+			box-shadow: 4px 0 10px rgba(0,0,0,0.4);
+
+			left: 140px;
+			bottom: 0px;
+			transform-origin: right;
+			transition: transform  1s ;
+
+			
+
+		}
+		.div3:hover{	
+				
+			transform: rotateY(-60deg);
+			
+	  
+		}
+		.div4:hover{
+				
+			transform: rotateY(60deg);
+			
+				
+			
+		}
+		
+	.triangle1 {
+   		 	width: 0px;
+    		height: 0;
+    		margin: auto;
+    		position: absolute;
+    		left: 0px;
+    		bottom: -220px;
+    		top: -223px;
+    		border-left: 153px solid transparent;
+    		border-right: 148px solid transparent;
+    		border-bottom: 202px solid #fff;
+		}
+		.triangle2{
+			margin: auto;
+    		position: absolute;
+    		left: 130px;
+    		top: 137px;
+    		color: #0a0a0a;
+    		font-size: 29px;
+
+		}
+		/*.triangle2 {
+    		width: 100px;
+    		height: 0;
+    		margin: auto;
+   		 	position: absolute;
+    		top: -3px;
+    		left: 1px;
+    		border-left: 100px solid transparent;
+    		border-right: 100px solid transparent;
+    		/*border-top: 100px solid #000;*/
+			/*}*/
+		./*s2 {
+    		width: 7%;
+    		height: 20px;
+    		background: #4caf50;
+    		margin: auto;
+    		position: absolute;
+    		left: 20px;
+    		bottom: 0px;
+    		top: 181px;
+    		border-radius: 78px 13px 93px 15px;
+		}*/
+		
+		
+	</style>
+</head>
+<body>
+
+
+	<div class="container">
+
+		<div class="div1">DIV1
+
+			<div class="div2">DIV2</div>
+
+			<div class="div3">DIV3</div>
+			<div class="div4">DIV4</div>
+
+			<div class="div5">DIV5</div>
+				
+		
+
+		</div>
+		
+	</div>
+
+
+</body>
+</html>
+<!-- 
+		if little,view can see width
+ -->
+

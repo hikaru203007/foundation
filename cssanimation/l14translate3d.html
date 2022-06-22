@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Translate in 3D</title>
+	<style type="text/css">
+		*{
+			/*perspective: 500px;*/
+		}
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		img{
+			width: 300px;
+			transition:transform 1s;
+		}
+		img:hover{
+			/*transform: rotateX(45deg);*/
+			/*အနောက်ကိုလှန်ကျသွားတယ်*/
+			/*transorm:rotateX(90deg);*/
+			/*transform: rotateX(1turn);*/
+			/*1turn= 360deg*/
+			/*transform:rotateX(120deg);*/
+
+			/*transform: rotateX(-120deg);*/
+			/*negative value ဖြစ်လို့ အရှေ့ကိုမှောက်ချသလိုဖြစ်သွားတယ်*/
+
+			/*transform: rotateY(45deg);*/
+			/*transform: rotateY(90deg);*/
+			/*transform:rotateY(180deg);*/
+			/*transform: rotateY(1turn);*/
+			/*transform: rotateY(120deg);*/
+			transform: rotateY(-120deg);
+			/*negative ဆိုရင် လက်ဲ၀◌ကနေ စလှည်တယ်။ positive value ဆိုရင် လက်ယာကနေ စလှည်တယ်*/
+
+		}
+		
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="./img/dog2.jpg" alt="dog2"/>
+		
+	</div>
+
+
+</body>
+</html>

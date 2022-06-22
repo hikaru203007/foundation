@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Translate in 3D</title>
+	<style type="text/css">
+		/**{
+			perspective: 1000px;
+		}*/
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+		.container{
+			perspective: 500px;
+
+			/*default*/
+			perspective-origin: center;
+
+			/*perspective-origin: top;*/
+			/*perspective-origin: bottom;*/
+			/*perspective-origin: left;*/
+			/*perspective-origin: right;*/
+			/*သူကလေ rightဆိုရင် right centerကို အခြေပြုပြီးအလု်လုပ်ပေးတယ်/
+			left ဆိုရင်လည်း left center ကို အခြေပြုပြီးလုပ်ပေးတယ်*/
+
+			/*perspective-origin: top bottom;*/
+			/*အဆင်ပြေသလို ချိန်းပြီးရေးလို့ရတယ်*/
+
+			/*perspective-origin: left top;*/
+			/*left and top ရဲ့ထိပ်နားကနေအလုပ်လုပ်ပေးသွားတာ*/
+			
+
+			/*perspective-origin: left bottom;*/
+			/*perspective-origin: right top;*/
+			/*perspective-origin: right bottom;*/
+
+
+			/*perspective-origin: 0 bottom;*/
+			/*0= left bottom (၀) က left ကဖြစ်သွားတော့ left bottomကနေစသွားလို့ဖြစ်သွားမယ်*/
+			/*perspective-origin: 50% bottom;*/
+			/*50%=center*/
+			/*perspective-origin: 100% bottom;*/
+			/*100%=right*/
+			/*perspective-origin: 0 top;*/
+			/*perspective-origin: 50% top;*/
+			perspective-origin: 100% top;
+		}
+
+		img{
+			width: 300px;
+			transition: transform 2s;
+		}
+
+		img:hover{
+			/*transform:translateZ(300px);*/
+			/*transform:translateZ(-200px);*/
+			/*အရှေ့တိုးရင် (+)
+			 အနောက်ဆုတ်ရင် (-)*/
+			/*အရှေ့အနောက်ရွှေ့မယ်၊ မြင်ကွင်းထက် widthက များရင် အပုံက တဖြည်းဖြည်းနီးလာပြီး မမြင်ရတဲ့အထိဖြစ်သွားမယ်*/
+
+			transform: translateZ(400px);
+
+		}
+		
+
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<img src="./img/dog2.jpg" alt="dog2" />
+	</div>
+
+
+
+
+
+
+	<script type="text/javascript">
+		
+	</script>
+
+</body>
+</html>

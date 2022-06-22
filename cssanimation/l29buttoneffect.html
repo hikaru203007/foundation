@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button Effect</title>
+
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+			height: 100vh;
+			background: #355741;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+		.btn{
+			width: 350px;
+			height: 65px;
+			
+			background-color: #000;
+			border:none;	
+			box-shadow: 5px 5px 1px rgba(0,0,0,0.3);
+
+			position: relative;
+		}
+
+		.btn span{
+			font-size:20px;
+			color:#fff;
+			
+			text-transform: uppercase;
+			letter-spacing: 5px;
+
+			display: block;
+
+			/*transform do work in the block element.if thery are inline block changes to block element*/
+			transform: scaleX(0.7);
+			transform-origin: left;
+		}
+
+		.btn em{
+			width:30%;
+			height: 1px;
+			background-color:#fff;
+
+			/*display: block;*/
+			/*if you don't want to diplay block,you can use position absolute.They are the same block element*/
+			position: absolute;
+			left:70%;
+			top:50%;
+		}
+		
+
+	</style>
+</head>
+<body>
+
+	<!-- Emplasis Elemtn(inline element) -->
+	<!-- span,em =>inline block don't work at transform so,they are changed block element -->
+
+	<button type="button" class="btn"><span>Read More...</span><em></em></button>
+
+</body>
+</html>

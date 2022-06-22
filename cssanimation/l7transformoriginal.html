@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>transformoriginal</title>
+	<style type="text/css">
+		body{
+
+			/*width:;*/
+			height: 100vh;
+			/*heightပေးှ အလယ်ရောက် (couple and sky)*/
+			align-items: center;
+			/*center*/
+
+
+
+			display: flex;
+			justify-content: center;
+			
+
+
+
+		}
+		img{
+			width:300px;
+			height: 200px;
+
+			transition: transform 2s;
+
+			/*transform-origin:center;default*/
+			/*sat ှ် ကိုချိ်းချင်လို*/
+
+			/*transform-origin:top;*/
+			/*transform-origin:bottom;*/
+			/*transform-origin:left;*/
+			/*transform-origin:right;*/
+
+
+			/*transform-origin:left center;*/
+							  /*x   y*/
+			/*transform-origin:left top;*/
+			/*transform-origin:right top;*/
+			/*transform-origin:left bottom;*/
+			/*transform-origin:right bottom;*/
+
+			/*length*/
+			/*transform-origin:left center;*/
+			/*transform-origin:0;*/
+			/*transform-origin:50%;*/
+			/*transform-origin:150px;*/
+			/*transform-origin:100%;*/
+
+
+			/*x,y*/
+			/*transform-origin:0;
+			transform-origin:0 0;
+			transform-origin:0 50%;
+			transform-origin:50% 50%;*/
+			/*transform-origin:30% 50%;*/
+			transform-origin:150px 100px;
+			/*//middle because width 300px hight 200pxဖစ်လေို့*/
+
+
+
+
+		}
+		img:hover{
+			transform: rotate(45deg);
+
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		<img src="./img/dog.jpg" alt="dog"/>
+	</div>
+
+
+</body>
+</html>

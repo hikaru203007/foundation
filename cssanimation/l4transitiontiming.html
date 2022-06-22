@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Transition Timing Function</title>
+	<style type="text/css">
+		.container{
+			width:1000px;
+			background: gray;
+		}
+		.container .move{
+			width:150px;
+			height: 50px;
+			background: red;
+			color: #fff;
+			font-size: 20px;
+
+			text-align: center;
+			line-height: 50px;
+			/*line-heightက အပေါ် က heightကိုကြည့်ပြီးယူာ.*/
+
+			margin:20px 0;/*t b, l r*/
+
+			transition-property: transform;
+			transition-duration: 3s;
+		}
+
+		.container .move:hover{
+			transform: :translate(850px);
+		}
+
+		#ease{
+			transition-timing-function: ease;
+		}
+		#easein{
+			transition-timing-function: ease-in;
+		}
+		#easeout{
+			transition-timing-function: ease-out;
+		}
+		#easeinout{
+			transition-timing-function: ease-in-out;
+		}
+		#linear{
+			transition-timing-function: linear;
+		}
+		#cubicbezier{
+
+											/*cubic-bezier(p0,p1,p2,p3)*/
+
+			transition-timing-function: cubic-bezier(1,0,0,1);
+		}
+		
+		
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div id="ease" class="move">ease</div>
+	</div>
+
+	<div class="container">
+		<div id="easein" class="move">ease-in</div>
+	</div>
+
+	<div class="container">
+		<div id="easeout" class="move">ease-out</div>
+	</div>
+
+	<div class="container">
+		<div id="easeinout" class="move">ease-in-out</div>
+	</div>
+
+	<div class="container">
+		<div id="linear" class="move">linear</div>
+	</div>
+
+	<div class="container">
+		<div id="cubicbezier" class="move">cubic-bezier</div>
+	</div>
+
+</body>
+</html>
+<!--  
+ease go faster finishd slo
+ease-in slo -----------fast
+ease-out fast--------slo
+ease-in-out slo-----fast-----------slo
+linear sam at
+cubic-bezier: 
+
+-->

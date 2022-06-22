@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Transform Scale</title>
+	<style type="text/css">
+		.container{
+			width:1000px;
+			background: gray;
+		}
+		.container .move{
+			width:150px;
+			height: 50px;
+			background: red;
+			color: #fff;
+			font-size: 20px;
+
+			text-align: center;
+			line-height: 50px;
+
+			margin:10px 0;
+
+			margin:20px 0;
+		}
+
+		#scale:hover{
+			/*0 to 1*/
+
+			transform:scale(0);
+			/*ပျောက်ယ်*/
+			/*transform:scale(1);//default (၁)ထက်ငယ်ရင်သေးဘ် (၁)ထက်ကြီးရင်ကြီးယ်*/
+			/*transform:scale(2);*/
+			/*transform:scale(0.5);*/
+
+
+		}
+
+		#scalexy:hover{
+			/*scalexy(width,height)=scale(x,y)/
+
+			/*transform:scale(1,2);*/
+			/*transform:scale(2,1);*/
+			transform:scale(2,3);
+
+		}
+
+		#scaleX:hover{
+			/*scaleX(x)*/
+
+
+			/*transform:scaleX(0.5);*/
+			transform:scaleX(2);
+		}
+
+		#scaleY:hover{
+			/*scaleY(y)*/
+
+			/*transform:scaleY(0.5);*/
+			transform:scaleY(2);
+		}
+		img{
+
+			width:300px;
+
+			display: block;
+			margin:auto;
+			/*img က inlineblockဖြစ်လို့ no move*/
+			/* margin:auto => သုံးချင်ရင် block ဘဲသုံးလို့ရယ်။ */
+		}
+		img:hover{
+		
+			/*transform:scale(2);*/
+			/*transform:scale(0.5);*/
+			/*transform:scale(2,3);*/
+			transform:scaleX(2);
+
+
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div id="scale" class="move">
+
+			scale Me
+		</div>
+	</div>
+
+		<div class="container">
+		<div id="scalexy" class="move">
+
+			scale xy
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div id="scaleX" class="move">
+
+			scale X
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div id="scaleY" class="move">
+
+			scale Y
+		</div>
+	</div>
+
+	<hr/>
+
+	<div>
+		<img src="./img/dog.jpg" alt="dog">
+	</div>
+
+
+
+
+
+</body>
+</html>
+<!-- 
+scale()
+scale(x,y)
+scaleX(x)
+scaleY(y)
+ -->
