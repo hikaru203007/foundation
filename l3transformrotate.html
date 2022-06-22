@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Transform rotate</title>
+	<style type="text/css">
+		.container{
+			width:1000px;
+			background: gray;
+		}
+		.container .move{
+			width:150px;
+			height: 50px;
+			background: red;
+			color: #fff;
+			font-size: 20px;
+
+			text-align: center;
+			line-height: 50px;
+
+			margin:20px 0;
+			transition: transform;
+		}
+		#rotate:hover{
+				/*rotate(angle)*/
+			/*transform:rotate(45deg);*/
+			/*transform:rotate(-45deg);*/
+			/*transform:rotate(90deg);*/
+			transform:rotate(40deg);
+		}
+
+		#rotatex:hover{
+			/*laptop ကိုလှ်လိုက်ဲ့ပုံစံ*/
+			transform:rotateX(45deg);
+			/*transform:rotateX(-45deg);*/
+			/*transform:rotateX(90deg);*/
+		}
+		#rotatey:hover{
+			/*စာအုပ်ကို လှည့် လိုက်တဲ့ပုံစံ
+			/*transform:rotateY(-45deg);*/
+			transform:rotateY(-45deg);
+			/*transform:rotateY(90deg);*/
+		}
+		img{
+
+			width:300px;
+
+			display: block;
+			margin:auto;
+			/*img က inlineblockဖြစ်လို့ no move*/
+			/* margin:auto => သုံးချင်ရင် block ဘဲသုံးလို့ရယ်။ */
+		}
+		img:hover{
+
+		/*transform:rotate(45deg);*/
+		/*transform:rotate(-45deg);*/
+		transform:rotate(-30deg);
+		/*transform: skewY(-30deg);*/
+
+		/*transform:rotate(180deg);*/
+		/*transform:rotate(360deg);*/
+		/*transform:rotate(1turn);360deg*/
+		/*transform:rotate(0.5turn);*/
+
+		/*400grad=360deg*/
+		/*transform:rotate(400grad);
+		transform:rotate(-200grad);
+
+		transform:rotateX(45deg);*/
+		/*transform:rotateY(45deg);*/
+
+
+
+
+
+	}
+
+
+		
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div id="rotate" class="move">rotate Me</div>
+	</div>
+
+	<div class="container">
+		<div id="rotatex" class="move">rotate X</div>
+	</div>
+
+
+	<div class="container">
+		<div id="rotatey" class="move">rotate Y</div>
+	</div>
+
+	<hr/>
+
+	<img src="./img/dog.jpg" alt="dog"/>
+</body>
+</html>
+<!-- 
+	rotate(xy)
+	rotateX()
+	rotateY()
+
+ -->
