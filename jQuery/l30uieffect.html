@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UI effect & show/hide/toggle Method</title>
+	<link href="./libs/jquery-ui-1.13.1/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+	<style type="text/css">
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			flex-direction: column;
+			/*buttonကိုအောက်ချအောင်*/
+		}
+
+		.container{
+			width: 1200px;
+			background: #f4f4f4;
+			padding:20px;
+
+			display: flex;
+		}
+		.box{
+			width:100px;
+			height: 100px;
+
+			margin:0 10px;
+		}
+		.square1,.square7,.square13{
+			background: green;
+
+		}
+		.square2,.square8{
+			background: orange;
+
+		}
+		.square3,.square9{
+			background: blue;
+
+		}
+		.square4,.square10{
+			background: violet;
+
+		}
+		.square5,.square11{
+			background: brown;
+
+		}
+		.square6,.square12{
+			background: steelblue;
+
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="box square1">1</div>
+		<div class="box square2">2</div>
+		<div class="box square3">3</div>
+		<div class="box square4">4</div>
+		<div class="box square5">5</div>
+		<div class="box square6">6</div>
+		<div class="box square7">7</div>
+		<div class="box square8">8</div>
+		<div class="box square9">9</div>
+		<div class="box square10">10</div>
+		<div class="box square11">11</div>
+		<div class="box square12">12</div>
+		<div class="box square13">13</div>
+
+	</div>
+
+	<div class="control">
+		<button type="button" id="shakebtn">Shake</button>
+		<button type="button" id="bouncebtn">Bounce</button>
+		<button type="button" id="blindbtn">Blind</button>
+		<button type="button" id="clipbtn">Clip</button>
+		<button type="button" id="dropbtn">Drop</button>
+		<button type="button" id="explodebtn">Explode</button>
+		<button type="button" id="fadebtn">Fade</button>
+		<button type="button" id="foldbtn">Fold</button>
+		<button type="button" id="highlightbtn">Highlight</button>
+		<button type="button" id="puffbtn">Puff</button>
+		<button type="button" id="pulsatebtn">Pulsate</button>
+		<button type="button" id="sizebtn">Size</button>
+		<button type="button" id="slidebtn">Slide</button>
+
+	</div>
+
+
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript" src="./libs/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+		$(".square1,.square2,.square3,.square4,.square5,.square6,.square7,.square8,.square9,.square10,.square11,.square12,.square13").hide();
+
+			// console.log('hi');
+
+			//effct()
+			// selector.effect(effecttype,speed);
+			// selector.effect(effecttype,{param},speed);
+
+			$("#shakebtn").click(function(){
+
+				// $(".square1").effect("shake",1000);
+				// $(".square1").effect("shake",2000);
+				//$(".square1").effect("shake","slow");//4ကြိမ်shakeသွားတယ်,leftကစပြီးshake
+
+				// $(".square1").effect("shake",{
+				// 	direction:"left",
+				// 	// direction:"right"
+				// 	// direction:"up"
+				// 	// direction:"down",
+				// 	times:5,
+				// 	distance:200
+				// },2000);
+				$(".square1").show("shake","slow");
+
+				// $(".square1").hide("explode","slow");
+			// jquery functionထဲမှာ jq ui effect()တွေ ၀◌င်ရေးပြီးသုံးလို့ရပါတယ်
+			});
+
+//---------------------------------------------------
+
+
+			$("#bouncebtn").click(function(){
+
+				// $(".square2").effect("bounce",2000);
+				// $(".square2").effect("bounce","slow");
+			// 	$(".square2").effect("bounce","fast");
+
+			// 	$(".square2").effect("bounce",{
+
+			// 	// direction:"left"
+			// 	// direction:"right"
+			// 	 direction:up,
+			// 	// direction:down
+			// 	distance:200,
+			// 	time:10
+			// },5000);
+
+			$(".square2").show("bounce","slow");
+
+			});
+//----------------------------------------------------
+
+			$("#blindbtn").click(function(){
+
+				// #(".square3").effect("blind",1000);
+
+				// $(".square3").effect("blind",{
+				// 	// direction:"left"
+				// 	// direction:"right"
+				// 	direction:"up"//default
+				// 	// direction:"down"
+				// },1000);
+
+				$(".square3").show("blind","slow");
+			});
+//-----------------------------------------------------
+			$("#clipbtn").click(function(){
+				// အပေါ်နှင့်အောက်ကထက်လာပြီး အလယ်မှာ၀◌င်သွားတယ်
+
+				// #(".square4").effect("clip",1000);
+
+				// $(".square4").effect("clip","fast");
+
+				// $(".square4").effect("clip","slow");
+
+				$(".square4").show("clip","slow");
+
+			});
+//-------------------------------------------
+//drop=>တဖြည်းဖြည်းနဲ့fadeoutဖြစ်သွားတဲ့ပုံစံ
+
+				$("#dropbtn").click(function(){
+				
+					// $(".square5").effect("drop",1000);
+
+					// $(".square5").effect("drop",{
+					// 	// direction:"left"//default
+					// 	// direction:"right"
+					// 	// direction:"up"
+					// 	direction:"down"
+					// });
+					$(".square5").show("drop","slow");
+
+				});
+//---------------------------------------------------
+				
+//explode()=>ကွဲထွက်သွားတယ်
+
+				$("#explodebtn").click(function(){
+				
+					// $(".square6").effect("explode",1000);
+
+					// $(".square6").effect("explode","fast");
+					// $(".square6").effect("explode","slow");
+					$(".square6").show("explode","slow");
+
+				});
+//----------------------------------------------------
+//fade()=>တဖြည်းဖြည်းနဲ့လျော့သွားပီးပျောက်သွားတယ်ပြီးရင်ပြန်ပေါ်တယ်
+				$("#fadebtn").click(function(){
+				
+					// $(".square7").effect("fade",1000);
+
+					//$(".square7").effect("fade","fast");
+					// $(".square7").effect("fade","slow");
+
+					$(".square7").show("fade","slow");
+				});
+//-------------------------------------------------------
+			
+//fold()=>အပေါ်ကိုတတ်ပြီး ဘယ်လက်ကို ၀◌င်သွားတယ်	
+				$("#foldbtn").click(function(){
+				
+					// $(".square8").effect("fold",1000);
+
+					// $(".square8").effect("fold","fast");
+					//$(".square8").effect("fold","slow");
+
+					$(".square8").show("fold","slow");
+
+				});
+//----------------------------------------------------
+
+//highlight()=>	
+				$("#highlightbtn").click(function(){
+				
+					// $(".square9").effect("highlight",1000);
+
+					// $(".square9").effect("highlight",{
+					// 	color:"red"
+					// },3000);
+					$(".square9").show("highlight","slow");
+
+				});
+//----------------------------------------------------
+//puff()=>scale()နဲ့opacity ပေးထားသလိုပဲ
+				$("#puffbtn").click(function(){
+				
+					// $(".square10").effect("puff",1000);
+
+					// $(".square10").effect("puff","fast");
+					// $(".square10").effect("puff","slow");
+					$(".square10").show("puff","slow");
+					
+				});
+//-------------------------------------------------------
+//pulsate()=>သွေးခုန်နှုန်းလိုမြန်နေမယ်
+					$("#pulsatebtn").click(function(){
+				
+					// $(".square11").effect("pulsate",1000);
+
+					// $(".square11").effect("pulsate",{
+					// 	times:5
+					// },1000);
+
+					 $(".square11").show("pulsate",1000);
+					
+				});
+//--------------------------------------------------
+//size()=>scale()=>အတိုင်းအထဲကိုအနောက်ကိုရောက်သွားတယ်
+
+				$("#sizebtn").click(function(){
+				
+					// $(".square12").effect("size",1000);
+
+					// $(".square12").effect("size","fastt");
+					// $(".square12").effect("size","slow");
+
+					$(".square12").show("size","slow");
+					
+				});
+//-----------------------------------------------------
+//slide()=>ပျောက်နေကနေ ထွက်လာမယ်,blin()=>က ပေါ်တာကနေချုံသွားမယ်
+				$("#slidebtn").click(function(){
+				
+					// $(".square13").effect("slide",1000);
+
+					// $(".square13").effect("slide",{
+					// 	direction:"left",//default
+					// 	// direction:"right"
+					// 	// direction:"up"
+					// 	// direction:"down"
+					// 	width:"200px;"
+					// },3000);
+					$(".square13").show("slide","slow");
+					$(".square13").toggle("slide",1000);
+					
+				});
+				
+			});
+
+	</script>
+
+</body>
+</html>
+
+<!-- jqueryမှာတော့ effect()ကတော့မရှိဘူး
+jquery.uiမှာဘဲ ရှိတယ် -->
+<!-- fadeToတစ်ခုပဲ spacingမပါတာကကကကကက -->
+<!-- time:10,s-2000ဆိုရင် အကြိမ်၁၀မှာ 2sဆိုတော့ speed fastဖြစ်သွားတယ်, -->
+<!-- shake=>လှုပ်တာညိမျှတယ်
+	bounce=>က မညီ၊တစ်ဖက်ကိုများပြီး တစ်ဖက်ကိုနည်းတယ် -->
+<!-- effect()=>ပေါ်တာ၆ခု၊ ပျောက်တာက ၇ခု=။jquery ui -->
+<!-- // jquery functionထဲမှာ jq ui effect()တွေ ၀◌င်ရေးပြီးသုံးလို့ရပါတယ် -->
+<!-- shake,bounce,blind,clip,size,explode,fade,fold,highlight,slide,puff,pulsate -->

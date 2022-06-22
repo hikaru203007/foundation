@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>even and odd Method</title>
+	<style type="text/css">
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			flex-direction: column;
+
+		}
+		.container{
+			width:1000px;
+			background: #f4f4f4;
+			padding:20px;
+
+			display: flex;
+
+		}
+		.box{
+			width:150px;
+			height: 300px;
+
+			margin:0 20px;
+		}
+		.square1{
+			background: green;
+		}
+
+		.square2{
+			background: orange;
+		}
+
+		.square3{
+			background: blue;
+		}
+
+		.square4{
+			background: violet;
+		}
+
+		.square5{
+			background: brown;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="box square1">DIV 1,Index is 0,DIV 1,Index is -5</div>
+		<hr/>
+		<div class="box square2">DIV 2,Index is 1,DIV 1,Index is -4</div>
+		<hr/>
+		<div class="box square3">DIV 3,Index is 2,DIV 1,Index is -3</div>
+		<hr/>
+		<div class="box square4">DIV 4,Index is 3,DIV 1,Index is -2</div>
+		<hr/>
+		<div class="box square5">DIV 5,Index is 4,DIV 1,Index is -1</div>
+
+	</div>
+
+
+	<div>
+		<button type='button' id="evnbtn">event btn</button>
+		<button type="button" id="oddbtn">odd btn</button>
+		<button type="button" id="slcbtn">slice btn</button>
+
+	</div>
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			// console.log('hi');
+
+			//The index starts from 0
+
+			//even()
+			// $("#evnbtn").click(function(){
+
+			// 	$(".box").even().css("background-color","black");
+			// });
+
+			//odd()
+			// $("#oddbtn").click(function(){
+
+			// 	$(".box").odd().css("background-color","grey");
+			// });
+
+
+			//slice (start,stop)
+
+			$("#slcbtn").click(function(){
+				// slice(index,length(မတိုင်ခင်))
+
+				// $(".box").slice(1,4).css({
+				// 	"background-color":"steelblue",
+				// 	"color":"#fff"
+				// })
+
+				$(".box").slice(-3,-2).css({
+					"background-color":"steelblue",
+					"color":"#fff"
+				})
+				// slice()(+)ဆိုရင် (index(0),count)
+
+				// $(".box").slice(-4,-3).css({
+				// "background-color":"steelblue",
+				// "color":"#fff"
+				// })
+				// slice()(-)ဆိုရင် (-1)ကနေစပြီး အဆုံးမှာ သူ့ကိုယ်သူအရောင်မခြယ်ပါ။
+			});
+		});
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>prepend adn append Method</title>
+</head>
+<body>
+
+	<h1>Hello Myanmar</h1>
+
+	<button type="button" id="prependbtn">Prepend Text</button>
+	<button type="button" id="appendbtn">Append Text</button>\
+	<button type="button" id="appendtobtn">Append To Text</button>
+
+
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			// console.log('hi');
+
+			//prepend
+			$("#prependbtn").click(function(){
+
+			   // $("h1").before("<i>I am before tag");
+
+				// $("h1").prepend("Greeting Message = ");
+				$("h1").prepend("<u>Greeting Message = </u>");
+			});
+
+
+			//append
+			$("#appendbtn").click(function(){
+
+				// $("h1").append("Greeting Message = ");
+				$("h1").append("<u>Greeting Message = </u>");
+			});
+
+
+			//appendto==appendလို့အနောက်ကနေ၀◌င်တယ်(text)သီးသန့်ဆိုအလုပ်မလုပ်ပါ
+
+			$("#appendtobtn").click(function(){
+
+				// result= no(cuz must be inc html tags)
+				// $("hello World").appendTo("h1");
+
+
+				$("<i>Greeting Message= </i>").appendTo("h1");
+			});
+
+
+			
+
+		});
+
+
+	</script>
+
+</body>
+</html>
+<!-- beforeuက ကိုယ်ခေါါတဲ့ tag ရဲ့အပြင်မှာပေါ်တယ်(html element)တွေအလုပ်လုပ်တယ်
+	prepend က ကိုယ်ခေါ်တဲ့ tag element ရဲ့အတွင်းမှာ ဖော်ပြတယ် <html>tag can use 
+	appendTo method က <html>Tagတွေပါမှ အလုပ်လုပ်မယ် ။ စာသားပဲရေးရင် အလုပ်မလုပ်ပါ။-->

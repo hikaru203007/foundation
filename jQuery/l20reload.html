@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>reload Method</title>
+</head>
+<body>
+
+	<div>
+
+		<h1>Refresh or Reload a page with JQuery</h1>
+		<p id="display"></p>
+
+		<button type="button">Reload</button>
+
+	</div>
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function(e){
+			// console.log('hi');
+
+			$("button").click(function(){
+
+				location.reload(true);
+				//true is option
+			});
+
+			var getdate= new Date();
+			document.getElementById('display').textContent=getdate;
+
+		});
+
+
+
+
+	</script>
+
+</body>
+</html>

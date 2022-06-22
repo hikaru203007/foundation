@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>attr and removeattr Method</title>
+	<style type="text/css">
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+		.container{
+			width:800px;
+			background: #f4f4f4;
+			padding: 20px;
+
+		}
+		.text-primary{
+			color:blue;
+		}
+		.text-light{
+			color: #fff;
+		}
+		.bg-info{
+			background-color:lightskyblue;
+		}
+		.text-center{
+			text-align: center;
+		}
+		.underline{
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+
+<div class="containar">
+	<div>
+		<img src="./img/logo1.png" alt="logo1" width="100">
+		<h1 id="1" class="bg-info">Hello Myanmar</h1>
+		<h1 id="2">Hello Thailand</h1>
+		<h1 id="3">Hello Indonesia</h1>
+		<h1 id="4">Hello Srilanka</h1>
+	</div>
+	<button type="button" id="txtpri">text-primary</button>
+	<button type="button" id="bginfo">bg-info</button>
+	<button type="button" id="txtbg">textlight-bginfo</button>
+	<button type="button" id="multibtn">Multi Attr</button>
+
+
+	<button type="button" id="rmattr">remove Attr</button>
+	<button type="button" id="textcnt">text-center</button>
+	<button type="button" id="rmclass">remove text-light</button>
+	<button type="button" id="hasclass">has Class</button>
+	<button type="button" id="togclass">toggle Class</button>
+</div>
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			// console.log("hi");
+
+
+			//$(selector).attr(attribute,value);
+			$("#txtpri").click(function(){
+				$("h1").attr("class","text-primary");
+			});
+
+			$("#bginfo").click(function(){
+				$("h1").attr("class","bg-info");
+			});
+
+			$("#txtbg").click(function(){
+				$("h1").attr("class","text-light bg-info");
+			});
+
+			$("#multibtn").click(function(){
+
+				$("img").attr({
+					alt:"Logo2",
+					width:"150",
+					src:"./img/logo2.png",
+					title:"this is title",
+					abc:"this is logo image",
+					border:"3px solid black"
+				});
+
+			});
+
+
+				//multi dataထည့်ချင်ရင် objectထဲထည့်ရေးရင်ရတယ်
+
+				//removeAttr()
+				// $("#rmattr").click(function(){
+				// 	$("h1").removeAttr("class");
+				// });
+
+				$("#rmattr").click(function(){
+					$("h1").removeAttr("id class");
+				});//multiremove
+
+// -----------------------------------------------
+	//class(DOMTOKEN List)(array တစ်ခန်းချင်းစီတိုင်းအလုပ်လုပ်တယ်)
+	//ရှိနေတဲ့elementကိုပါ bootstrapလို ထပ်ပြီး ထက်ထည့်ပေးတယ်
+
+			// $(selector).addClass();
+
+			$("#textcnt").click(function(){
+				// $("h1").addClass("text-center");
+
+				$("h1").addClass("text-center underline");
+			});
+
+			//removeClass()
+
+			$("#rmclass").click(function(){
+				// $("h1").removeClass("text-light");
+
+				$("h1").removeClass("bg-info text-light");
+
+			});
+
+			//hasClass() in jquery. contains() in js .Thery are working the same.
+
+			$("#hasclass").click(function(){
+				window.alert($("h1").hasClass("text-center"));
+			});
+
+			//toggleClas= class မရှိရင်ထည့်ပေးတယ်  သူ့ကိုဘဲ နောက်တစ်ခေါက် button clickရင် ရှိပြီးရင် ဖျက်ပေးတယ်
+			//one function(two action)(open and close)
+
+			$("#togclass").click(function(){
+				$("h1").toggleClass("text-center");
+			});
+
+
+			
+
+
+
+
+
+
+
+
+			});
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

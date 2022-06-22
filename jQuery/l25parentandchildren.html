@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>parent and children Method</title>
+	<style type="text/css">
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			flex-direction: column;
+			/*originalအတိုင်းပြန်ပေါ်ပေးတယ်*/
+			/*div is block elementဖြစ်ပေမဲ့ display:flex ထားထားလို့ ဘေးတိုက်ယှဉ်လျက်ဖော်ပြနေတယ် ဒါပေမဲ့စာသားတွေကို နေရာမကျဖြစ်နေရင်တော့ flex-direction:columnကိုသုံးပေးရမယ်*/
+		}
+
+		.container{
+			width: 900px;
+			background: #f4f4f4;
+			padding: 20px;
+
+			display: flex;
+		}
+		.box{
+			width: 150px;
+			height: 300px;
+			margin:0px 10px;
+
+		}
+
+		.square1{
+			background: green;
+		}
+
+		.square2{
+			background: orange;
+		}
+
+		.square3{
+			background: blue;
+		}
+
+		.square4{
+			background: violet;
+		}
+
+		.square5{
+			background: red;
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		<h1>parent & children Method</h1>
+		<p>This ia awesome JQuery version 3.6</p>
+
+	</div>
+
+	<div class="container">
+		<div class="box square1">Box 1</div><hr/>
+		<div class="box square2">Box 2</div><hr/>
+		<div class="box square3">Box 3</div><hr/>
+		<div class="box square4">Box 4</div><hr/>
+		<div class="box square5">Box 5</div><hr/>	
+		<!-- ပုံမှန်ဆို <hr>က horizonalအတို်းပေါ်ပေမဲ့အခုက display:flexပေးထားလို့ ထောင်လိုက်ပေါ်တယ် -->
+	 </div>
+
+	 <div>
+	 	<p>Hay guys!!!what's your plan after class.</p>
+	 </div>
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// console.log("hi");
+
+			//parent();=parent()ကိုရှာချင်ရင် childer()ကနေရှာတယ်
+			$(".box").click(function(){
+				$(this).parent().css({
+					"background":"darkblue",
+					"box-shadow":"5px 5px 10px rgba(0,0,0,0.5)"
+				});
+			});
+
+
+			//children()
+			// $(".container").click(function(){
+				// $(this).children().css("background-color","blue");
+			// });
+
+			// $(".container").click(function(){
+			// 	$(this).children(".square1").css("background-color","#eb34c9");
+			// });
+
+			// $(".container").click(function(){
+			// 	$(this).children(".square3,.square4").css("background-color","#ab0012");
+			// });
+
+			//siblings()
+			// $(".square1").click(function(){
+			// 	$(this).siblings().css("background-color","red");
+			// });
+
+			// $(".square1").click(function(){
+			// 	$(this).siblings(".square4").css("background-color","red");
+			// });
+
+			// $(".square1").click(function(){
+			// 	$(this).siblings(".square3,.square5").css("background-color","#eb4c34");
+			// });
+
+			//:nth-child();==>(1)n,(2)odd,(3)even,(4)formula
+
+			// :nth-child()က သူ့ကိုခေါ်ရင်သူ့ဘေးchildကိုeffectဖြစ်သွားတယ်(1ခေါ်ရင်(2)မှာeffect)
+			// nth-child()ကသူနဲ့childဖြစ်တာကိုဆွဲယူတာ
+
+
+			// $(".square1").click(function(){
+			// 	$(".box:nth-child(3)").css("background-color","grey");
+			// });
+
+			// $(".square1").click(function(){
+			// 	$(".box:nth-child(odd)").css("background-color","grey");
+			// });
+
+			// $(".square1").click(function(){
+			// 	$(".box:nth-child(even)").css("background-color","grey");
+			// });
+			// // hrပါနေလို့ 
+
+// --------------------------------------------------------
+			
+			//:nth-of-type()သူကမျိုးတူမှအလုပ်လုပ်တာ
+
+			// $(".square1").click(function(){
+			// 	$(".box:nth-of-type(5)").css("background-color","silver");
+			// });
+
+
+			// $(".square1").click(function(){
+			// 	$(".box:nth-of-type(odd)").css("background-color","#eb4c34");
+			// });
+
+
+
+			// $(".square1").click(function(){
+			// 	$(".box:nth-of-type(even)").css("background-color","silver");
+			// });
+			// hrပါပါစေ သူနဲ့အမျိုးတူတာဘဲယူတယ်ဆိုတော့လေ
+
+// --------------------------------------------------------
+
+			//formula()=>1n,တစ်ခုတိုင်းတစ်ခုတိုင်း, 2n နှစ်ခုတိုင်းနှစ်ခုတိုင်း
+			// =>2n+1==>ပထမတစ်ခုယူမယ်ပြီးရင် 3ခုမြောက်
+
+
+			// $(".square1").click(function(){
+			// 	$(".box:nth-of-type(3n)").css("background-color","silver");
+			// });
+
+
+			// $(".square1").click(function(){
+			// 	$(".box:nth-of-type(4n+1)").css("background-color","silver");
+			// });
+
+
+			// $(".square1").click(function(){
+			// 	$(".box:nth-child(2n)").css("background-color","silver");
+			// });
+
+			// $(".square1").click(function(){
+			// 	$(".box:nth-child(2n+1)").css("background-color","silver");
+			// });
+
+//----------------------------------------------
+
+			//next()
+			// $(".container").click(function(){
+			// 	$(this).next().css({
+			// 		"background-color":"red",
+			// 		"color":"#fff"
+			// 	});
+			// });
+			
+
+			//prev()
+			$(".container").click(function(){
+				$(this).prev().css({
+					"background-color":"#001122",
+					"color":"white",
+					"padding":"10px"
+				});
+			});
+
+
+
+		});
+
+	</script>
+
+</body>
+</html>
