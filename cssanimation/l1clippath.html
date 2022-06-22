@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clip Path</title>
+	<style type="text/css">
+		/*<!-- property + value = declaration -->*/
+		.square{
+			width: 100px;
+			height: 100px;
+			background: steelblue;
+		}
+		.circle{
+			width: 100px;
+			height: 100px;
+			background: steelblue;
+			border-radius: 50%;
+		}
+		.triangle{
+			width: 0;
+			height: 0;
+
+			border-left: 100px solid transparent;
+			/*transparent=ကာလာပျောက်အောင်လုပ်တာပါ*/
+			border-right: 100px solid transparent;
+			border-bottom: 100px solid steelblue;
+		}
+
+		.squareshape{
+			width: 100px;
+			height: 100px;
+			background: steelblue;
+
+			float: left;
+
+			margin-right: 20px;
+		}
+		.circleshape{
+			width: 100px;
+			height: 100px;
+			background-color: steelblue;
+
+			border-radius: 50%;
+			/*clip-path: circle();*/
+			clip-path: circle(50%);
+			shape-outside: circle(50%);
+			/*shape-outside: က borderကို အကွေးဖြစ်အောင်လုပ်လိုက်တာ။*/
+
+			float: left;
+		}
+		.ellipseshape{
+
+			width: 100px;
+			height: 100px;
+			background-color: steelblue;
+
+			/*ellipse(width height)*/
+			clip-path: ellipse(50% 70%);
+			shape-outside: ellipse(50% 70%);
+
+			float: left;
+		}
+		.polygonshape{
+			width: 100px;
+			height: 100px;
+			background: steelblue;
+
+			clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+			clip-path: polygon(1% 0%, 20% 1%, 53% 76%, 79% 0%, 99% 1%, 60% 100%, 44% 100%);
+
+			float: left;
+		}
+
+		/*
+		circle();
+		ellipse();
+		polygon();
+		
+		*/
+		
+	</style>
+</head>
+<body>
+
+	<div class="square">Square</div>
+	<hr/>
+
+	<div class="circle">Circle</div>
+	<hr/>
+
+	<div class="triangle">Triangle</div>
+	<hr/>
+
+	<div>
+		<div class="squareshape"></div>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+	</div>
+
+	<hr>
+
+	<div>
+		<div class="circleshape"></div>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+	</div>
+	<hr>
+
+		<div>
+		<div class="ellipseshape"></div>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+	</div>
+
+	<hr>
+	<div>
+		<div class="polygonshape"></div>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+	</div>
+
+
+
+</body>
+</html>
