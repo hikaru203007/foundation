@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Key Frame</title>
+	<style type="text/css">
+
+		body{
+			padding: 0;
+			margin:0;
+		}
+
+		.box1{
+			width: 150px;
+			height: 150px;
+			background: red;
+
+			animation-name: myani;
+			/*animation-duration: 3s;*/
+			/*animation-fill-mode: backwards;*//* Default=go to original */
+			/*animation-fill-mode: forwards;*/
+			/*animation-delay: 3s;ခဏလောက်နေပြီးမှ စလုပ်မယ်*/
+		}
+
+		.box2{
+			width: 150px;
+			height: 150px;
+			background: orange;
+
+			/*animation-name: myrules;*/
+			animation-duration: 3s;
+
+			animation-fill-mode: forwards;/*လက်ရှိနေရာမှာဘဲရပ်သွားချင်ရင်သုံးတယ် */
+
+		}
+
+		.box3{
+			width: 150px;
+			height: 150px;
+			background-color: violet;
+
+			animation-name: myshakes;
+			animation-duration: 3s;
+
+			position: relative;
+			/*သူကပဲparentဆိုတော့ သူမှာပဲပေါ်ချင်တော့ တဆင့်ခံပြှီး absoluteရေးစရာမလိို့တော့ဘူး*/
+		}
+
+		@keyframes myani{
+			0%{
+				transform: translate(0px);
+			}
+
+			50%{
+				transform: translate(800px);
+			}
+
+			100%{
+				transform: translate(800px,800px);
+			}
+		}
+
+		@keyframes myrules{
+			0%{
+				background-color: violet;
+				transform: translate(0);
+			}
+			25%{
+				background-color: orange;
+				transform: translate(300px);
+			}
+			50%{
+				background-color: blue;
+				transform: translate(300px,300px);
+			}
+			75%{
+				background-color: green;
+				transform: translate(0,300px);
+				/*သူက (၀,၀)နဲ့ရှိတော့ ထပ်ပြီး xမှာ pxထားရင် မူလမှာမရပ်ဘဲ ရွေ့သွားမယ်*/
+			}
+			100%{
+				background-color: black;
+				transform: translate(0);
+			}
+		}
+
+
+/*			@keyframes myshakes{
+				12.5%{
+					left:-100px;
+				}
+				25%{
+					left:100px;
+				}
+				37.5%{
+					left:-50px;
+				}
+				50%{
+					left:50px;
+				}
+				62.5%{
+					left:-25px;
+				}
+				755%{
+					left:25px;
+				}
+			}*/
+
+			@keyframes myshakes{
+				12.5%{
+					top:-100px;
+				}
+				25%{
+					top:100px;
+				}
+				37.5%{
+					top:-50px;
+				}
+				50%{
+					top:50px;
+				}
+				62.5%{
+					top:-25px;
+				}
+				755%{
+					top:25px;
+				}
+			}
+		
+	</style>
+</head>
+<body>
+
+	<div class="box1"></div>
+	<hr/>
+	<div class="box2"></div>
+	<hr/>
+	<div class="box3"></div>
+
+
+</body>
+</html>
