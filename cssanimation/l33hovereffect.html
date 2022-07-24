@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hover Effect</title>
+	<style type="text/css">
+		
+		body{
+			font-family: sans-serif;
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.btn{
+			background: linear-gradient(
+				200deg,
+				pink,
+				skyblue
+				);
+			font-size:40px;
+			border:none;
+			padding:20px;
+
+			border-radius: 40px;
+
+			/*position: relative;*/
+			/*သုံးစရာမလိုပါ*/
+		}
+
+		.btn::after{
+			content: '10% 0FF';
+			font-size: 16px;
+
+			/*display: inline-block;*/
+			/*ပါလဲရမပါလဲရတယ်*/
+
+			font-size:16px;
+			background-color: orange;
+			border-radius: 25px;
+
+			position: absolute;
+			/*left:0;
+			top:0;*/
+
+			/*အခုက marginကိုသုံးချင်လို့ display:inline-blockကိုသုံးတာ marginက block elementဖြစ်မှ အလုပ်လုပ်တာ ဒါကြောင့် inline-blockက နှစခုစလုံး ဂုဏ်သတိတွေရတဘ်*/
+
+			padding: 5px;
+			margin-left: -55px;
+			margin-top: -30px;
+
+			transition: all .3s ease-out;
+		}
+
+		.btn:hover::after{
+			background-color: red;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+
+	<button type="button" class="btn">Add to Card</button>
+
+</body>
+</html>
+
+<!-- left/topမသုံးဘဲာ marginဘဲသုံးမယ်ဆိုရင် parentမှာ position:relative ပေးစရာမလိုဘူးနော -->

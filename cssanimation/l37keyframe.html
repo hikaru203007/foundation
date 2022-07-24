@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Keyframe</title>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+
+		.box{
+			width: 150px;
+			height: 150px;
+			background-color: steelblue;
+
+			animation-name: myani;
+			animation-duration: 3s
+			/*ရွှေ့ပြီး ပြီးရင် မူလနေရာကို ပြန်ရောက်လာတယ်*/
+		}
+
+		@keyframes myani{
+			/*from{
+				transform: translate(0px);
+			}
+
+			to{
+				transform: translate(1000px);
+			}*/
+
+			/*to{
+				transform: translate(1000px);
+			}*/
+
+		/*	0%{
+				transform: translate(0px);
+			}
+			100%{
+				transform: translate(100%);
+			}*/
+
+			100%{
+				transform: translate(100%);
+			}
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div class="box"></div>
+
+
+</body>
+</html>

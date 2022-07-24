@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hover Effect</title>
+	<style type="text/css">
+		
+		body{
+			font-family: sans-serif;
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		a{
+			width:300px;
+			height: 60px;
+			background:none;
+			color:#fff;
+			font-size:20px;
+			text-align: center;
+			line-height: 60px;
+			font-weight: bold;
+			letter-spacing: 2px;
+			text-decoration: none;
+			text-transform: uppercase;
+
+			position: relative;
+
+		}
+		a::before{
+			content: '';
+			width: 100%;
+			height: 100%;
+			background-color: skyblue;
+
+			position: absolute;
+			left:-3px;
+			top:-3px;
+
+			z-index: -1;
+			/*အနောက်ကိုရောက်အောင်*/
+
+
+			transition: all .3s;
+		}
+
+		a::after{
+			content: '';
+			width: 100%;
+			height: 100%;
+			background-color: steelblue;
+
+			position: absolute;
+			left:3px;
+			top:3px;
+
+			z-index: -1;
+			/*z-indexက before and afterမှာ နစ်ခုစလုံး (-1)ရေးရင် စာက afterမှာ ပေါ်မှာ afterကအရင်ပေါ်မယ်*/
+
+			/*ကိုကအရောင်ရောစက်ချင်တဲ့နေရာမှာ ရေးပေးရပါမယ်/သူကလေ transparentလုပ်လိုက်တဲ့ဆိုတဲ့သဘောသက်ရောက်တယ်*/
+
+			mix-blend-mode: multiply;
+
+			transition: all .3s;
+
+		}
+
+		a:hover::before{
+			left:20px;
+			top:-10px;
+
+					/*   h     v   blur     color*/
+			box-shadow: 10px -10px 0 steelblue;
+			/*-10px => အပေါ်တတ်ချင်လို့*/
+		}
+
+		a:hover::after{
+			left: -3px;
+			top:10px;
+
+			box-shadow: 10px -10px 0 skyblue;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<a href="#">Hover Me</a>
+
+</body>
+</html>
+
+<!-- z-index=>က backgroundက စာနဲ့ဖုံးနေလို့ ပြန်ပေါ်ရင် ခေါ်သုံးတာများတယ် -->
+<!-- before,after,ပြီးတော့ box-shadow -->
