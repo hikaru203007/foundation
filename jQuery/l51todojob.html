@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create New Job</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.container{
+			width: 500px;
+			background: #f4f4f4;
+			padding:10px;
+		}
+		.form-group{
+			margin:20px 0;
+		}
+		.form-control label{
+			display: block;
+			margin-bottom: 5px;
+		}
+		.form-control{
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<form action="" method="">
+			<div class="form-group">
+				<label for="todojob">Todo Job</label>
+				<input type="text" name="todojob" id="todojob" class="form-control" placeholder="Enter your something" />				
+			</div>
+
+			<div class="form-group">
+				<label for="joblists">Job Lists</label>
+				<select name="joblists" id="joblists" class="form-control">
+					<option selected disabled>Choose a job</option>
+				</select>	
+			</div>
+
+			<div class="form-group">
+				<!-- <button type="submit" disabled>Add New Job</button>	
+						 -->
+						 <button type="submit">Add New Job</button>	
+			</div>
+		</form>
+	</div>
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+
+			// var phfortodojob = "Enter your new job";
+
+			// $("#todojob").val(phfortodojob).focusin(function(){
+			// 	$(this).val("");
+			// }).focusout(function(){
+
+			// 	if($.trim($(this).val()) !== ""){
+			// 		$('[type=submit]').removeAttr('disabled');
+			// 	}else{
+			// 		$('[type=submit]').attr('disabled',true);
+			// 	}
+
+			// 	});
+		
+
+			// console.log('hi');
+
+			$("form").submit(function(e){
+				console.log('I am working');
+
+				var gettodojob = $('#todojob');
+				console.log(gettodojob.val());
+				//တစ်ခါတည်းval()မခေါ်တာက input boxကို clearလုပ်ချင်သေးလို့
+
+
+				// if($.trim(gettodojob.val())!==''){
+				if($.trim(gettodojob.val()).length > 0){
+					if(window.confirm("Are you sure to add new job!")){
+							$('#joblists').append(`<option>${gettodojob.val()}</option>`);
+							gettodojob.val("");
+							gettodojob.focus();
+					}else{
+							window.alert('Enter your new job');
+							gettodojob.val("");
+							gettodojob.focus();
+						}					
+				}else{
+					window.alert("Enter your new job");
+				}
+
+			e.preventDefault();
+
+			});
+
+
+			
+		});
+
+	</script>
+
+</body>
+</html>

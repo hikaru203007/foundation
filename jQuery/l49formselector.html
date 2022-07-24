@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Selector</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.container{
+			width: 900px;
+			background-color: #f4f4f4;
+			padding: 20px;
+		}
+		.form-group{
+			margin: 10px 0;
+		}
+		.form-group label{
+			display: block;
+			margin-bottom: 5px;
+		}
+		.form-control{
+			width: 100%;
+		}
+		.form-check{
+			display: flex;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+
+		<form action=" " method=" " enctype="= multipart/form-data">
+			<div>
+				<input type="image" src="./img/logo1.png"/>
+			</div>
+
+			<div class="form-grop">
+				<label for="firstname">First Name</label>
+				<input type="text" name="firstname" id="firstname" class="form-control" autocomplete="off"/>
+			</div>
+
+			<div class="form-group">
+				<label  for="lastname">Last Name</label>
+				<input type="text" name="lastname" id="lastname" class="form-control" autocomplete="off"/>
+			</div>
+
+			<div class="form-group">
+				<label  for="email">Email</label>
+				<input type="email" name="email" id="email" class="form-control" autocomplete="off"/>
+			</div>
+
+			<div class="form-group">
+				<label  for="password">Password</label>
+				<input type="password" name="password" id="password" class="form-control" autocomplete="off" disabled/>
+			</div>
+
+			<div class="form-group form-check">
+				<label>Fav Color</label>
+				<input type="checkbox" name="favcolor" id="favcolor" class="form-check-input" value="red"/><label for="favcolor">Red</label>
+				<input type="checkbox" name="favcolor" id="favcolor" class="form-check-input" value="green"/><label for="favcolor">Green</label>
+				<input type="checkbox" name="favcolor" id="favcolor" class="form-check-input" value="blue"/><label for="favcolor">Blue</label>
+			</div>
+
+			<div class="form-group form-check">
+				<label>Gender</label>
+				<input type="radio" name="gender" id="genderm" class="form-check-input" value="1"/><label for="genderm">Male</label>
+				<input type="radio" name="gender" id="genderf" class="form-check-input" value="0"/><label for="genderf">Female</label>
+				
+			</div>
+
+			<div class="form-group">
+				<label for="country">Country</label>
+				<select name="country" id="country" class="form-group">
+					<option selected=" disabled">Choose Cuntry</option>
+					<option value="mm">Myanmar</option>
+					<option value="th">Thailand</option>
+					<option value="ido">Indonesia</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="nrc">NRC</label>
+				<input type="file" name="nrc" id="nrc" class="form-control"/>
+			</div>
+
+			<div class="form-group">
+				<span title="formember">Already Register ????</span><a href="#" id="loginlink" title="formember">Login Here</a>
+				<p title="forthx">Thank you for paying attention.</p>
+			</div>
+
+			<div class="form-group form-check">
+				<input type="checkbox" name="agree" id="agree" class="form-check-input"/><label for="agree">I agreed above regulation.</label>
+				
+			</div>
+
+			<input type="reset" name="btn" value="Reset"/>
+
+			<button type="submit" class="btn" disabled>Submit</button>
+			
+		</form>
+		
+	</div>
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$("document").ready(function(){
+
+
+			//input tag (not included button)
+			// $("input").css({
+			// 	"background-color":"yellow",
+			// 	"border":"1px dashed red"
+			// });
+
+			//radio and checkbox button don't work in background color.
+
+
+			// :input tag (included button)
+			// $(":input").css({
+			// 	"background-color":"yellow",
+			// 	"border":"1px solid red"
+			// });
+
+			//:text
+			// $(":text").css({
+			// 	"background-color":"yellow",
+			// 	"border":"1px dashed red"
+			// });
+
+			//:password
+			// $(":password").css({
+			// 	"background-color":"yellow",
+			// 	"border":"1px dashed red"
+			// });
+
+			//:checkbox
+			// $(":checkbox").css({
+			// 	"accent-color":"red"
+			// });
+
+			//:radio
+			// $(":radio").css({
+			// 	"accent-color":"red"
+			// });
+
+			// :checked for checkbox
+			// $("input[type=checkbox]").click(function(){
+				// console.log("hi");
+
+			// 	if($("input[name=favcolor]").is(":checked")){
+			// 		console.log("favcolor checked");
+			// 	}else{
+			// 		console.log("favcolor not tyet checked");
+			// 	}
+			// });
+
+			//more important error handling .checkမလုပ်ခဲ့ရင် databaseက မပြဘဲuiကနေ တန်းပြလို့ရတယ်
+			//attribute name ခေါ်ရင် inpug[type="checkbox"] ဘုံတူတာတစ်ခုကိုယူပေးရမယ်
+
+			$("input[type=checkbox]").click(function(){
+				if($(this).val()=== "red"){
+				console.log($(this).is(":checked")? 'My Fav Color is red':'Sorry my fav color is not red');
+			}else if($(this).val() === "green"){
+				console.log($(this).is(":checked")? 'My Fav Color is green':'Sorry my fav color is not green');
+
+			}else if($(this).val() ==="blue"){
+				console.log($(this).is(":checked")? 'My Fav Color is blue':'Sorry my fav color is not blue');
+			}
+		});
+
+			//:checked for radio
+			// $("input[type=radio]").click(function(){
+			// 	if($("input[name=gender]").is(":checked")){
+			// 			console.log("gender checked");
+			// 	}
+			// });
+
+			// $("input[type=radio]").click(function(){
+			// 	if($(this).val() === "1"){
+			// 		console.log("I am Male");
+			// 	}else{
+			// 		console.log("I am Female");
+			// 	}
+			// });
+			// =>ဘယ်နေရမှာသုံးလဲဆိုတော့ သူ့ကို အရှေ့က တစ်ခုခုနဲ့ကပ်တဲ့ အခါ ပိုသုံးတယ် eg.WDf7805,Mr...
+
+			//:selected
+
+			$("#country").change(function(){
+				// console.log("hi");
+
+				// var getcountry = $(this);
+				// console.log(getcountry.val());
+				// console.log(getcountry.text());
+
+				// var getcountry=$(":selected");
+				// var getcountry=$("#country : selected");
+				var getcountry=$("#country option:selected");
+
+				console.log(getcountry.val());
+				console.log(getcountry.text());
+				// tagတွေကို ကွာပြီးရေးပေးရမယ်
+			});
+
+			//:file
+			// $(":file").css({
+			// 	"background-color":"yellow",
+			// 	"border":"1px dashed red"
+			// });
+
+			//:image
+			$("image").css("width","100px");
+
+			//:reset
+			$(":reset").css("background-color","orange");
+			$(":reset").click(function(e){
+				console.log("hello i am reset button");
+				e.preventDefault();
+			});
+
+
+			//:submit
+			$(":submit").css("background-color","violet");
+
+
+			//:button
+			$(":button").click(function(e){
+				console.log("hello i am reset button");
+				e.preventDefault();
+			});
+
+			// $("[id]").css("color","red");
+			// $("[class]").css("color","steelblue");
+			// $("[title]").css("color","orange");
+
+			// $("[title]='formember']").css("color","orange");
+
+
+			// $("span['title']").css("color","green");
+			// $("a['title']").css("color","cyan");
+			// $("p['title']").css("color","blue");
+
+
+			$("p[title='forthx']").css("color","violet");
+			// tagနဲ့attributeကပ်ရေးမှရမယ် ဘာလို့လဲဆိုတော့ attributeက tagမှာရှိနေလို့,childအနေနဲ့ ဆိုရင် spaceတစ်ချက်ချ မဟုတ်ရင် ကပ်ရေး
+
+			//for agree
+			$("#agree").click(function(){
+
+				if($(this).is(":checked")){
+					$("[type='submit']").removeAttr("disabled");
+				}else{
+					// $("[type='submit']").attr("disabled","disabled");
+					$("[type='submit']").attr("disabled","disabled");
+				}
+			});
+			// checkedလုပ်ထားရင် disabledကို ဖျက်မယ် မရှိတော့ရင် ထည့်မယ်
+
+
+
+		});
+
+	</script>
+
+</body>
+</html>
+<!-- ischecked() is method,:checked is selector -->
+<!-- attribute selector ['id'] -->

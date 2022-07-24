@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UI sortable Method</title>
+	<link href="./libs/jquery-ui-1.13.1/jquery-ui.min.css"rel="stylesheet" type="text/css"/>
+	<style type="text/css">
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+
+		.container,.containertwo{
+			width:600px;
+			background-color: #f4f4f4;
+			padding: 20px;
+			margin:0 10px;
+			box-shadow: 0px 5px 5px #888;
+
+		}
+
+		td,th{
+			border:1px solid #000;
+			padding:5px;
+		}
+
+		tr{
+			cursor: pointer;
+		}
+
+		.spacing{
+			background: "blue";
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+
+		<h1>Closing Inventory</h1>
+
+		<table id="mydata">
+
+			<thead>
+				<th>ID</th>
+				<th>Product Name</th>
+				<th>Unit Price</th>
+				<th>Qty</th>
+				<th>Category</th>
+			</thead>
+			<tbody>
+				<tr class="mov">
+					<td>1001</td>
+					<td>Redbull</td>
+					<td>700</td>
+					<td>10</td>
+					<td>Food</td>
+				</tr>
+				<tr class="mov">
+					<td>1002</td>
+					<td>Sponsor</td>
+					<td>500</td>
+					<td>30</td>
+					<td>Food</td>
+				</tr>
+				<tr class="stop">
+					<td>1003</td>
+					<td>Face masks</td>
+					<td>50</td>
+					<td>20</td>
+					<td>Non Food</td>
+				</tr>
+				<tr class="stop">
+					<td>1004</td>
+					<td>Sanitiser</td>
+					<td>200</td>
+					<td>50</td>
+					<td>Non Food</td>
+				</tr>
+				<tr class="stop">
+					<td>1005</td>
+					<td>Shower Gel</td>
+					<td>200</td>
+					<td>50</td>
+					<td>Non Food</td>
+				</tr>
+				<tr class="stop">
+					<td>1006</td>
+					<td>Shampoo</td>
+					<td>200</td>
+					<td>300</td>
+					<td>Non Food</td>
+				</tr>
+				<tr class="mov">
+					<td>1007</td>
+					<td>Drinking Water</td>
+					<td>300</td>
+					<td>70</td>
+					<td>Food</td>
+				</tr>
+				<tr class="mov">
+					<td>1008</td>
+					<td>Cheese</td>
+					<td>120</td>
+					<td>500</td>
+					<td>Food</td>
+				</tr>
+			</tbody>
+			
+		</table>
+		
+	</div>
+
+	<div class="containertwo">
+
+		<h1>Food Products Inventory</h1>
+
+		<table id="mydatatwo">
+
+			<thead>
+				<th>ID</th>
+				<th>Product Name</th>
+				<th>Unit Price</th>
+				<th>Qty</th>
+				<th>Category</th>
+			</thead>
+			<tbody>
+				<tr class="mov">
+					<td>1009</td>
+					<td>Jelly</td>
+					<td>100</td>
+					<td>300</td>
+					<td>Food</td>
+				</tr>
+				<tr class="mov">
+					<td>1010</td>
+					<td>Cake</td>
+					<td>300</td>
+					<td>100</td>
+					<td>Food</td>
+				</tr>
+				
+			</tbody>
+			
+		</table>
+		
+	</div>
+
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+	<script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// console.log("hi");
+
+			// $("#mydata > tbody").sortable();
+			// $("#mydata tbody").sortable();
+			// tableအောက်က tbodyကိုကြိုက်သဘောက် ရွှေ့လို့ရတယ်
+
+
+			$("#mydata tbody").sortable({
+				// axis=>၀◌င်ရိုးကိုပြောတာ x=>hr,y=>vertiacl
+				// axis:"x",
+				// axis:"y"
+				// containment:".container",
+				//containment is restrict
+
+				//we can call to class but no need to put "."
+				// placeholderတစ်ခုဘဲclassခေါ်ရင် (.)
+				// idနဲ့ကမရဘူး classနဲ့ပဲရတယ်
+				placeholder:"spacing",
+
+				connectWith:"#mydatatwo tbody",
+
+				cancel:".stop",
+
+				// we can move but can't put into CANCEL items single or group
+
+				items:".mov",
+				// nonfoodဖြစ်နေတဲ့အောက်မှ foodတွေကိုထားလို့မရဘူး itemsကလုပ်ဆောင်ပေးတယ်
+
+				// cursor:"grab",
+				// cursor:"move",
+				// cursor:"pointer"
+				cursor:"crosshair"
+
+
+			});
+
+
+
+			$("#mydatatwo tbody").sortable({
+
+				placeholder:"spacing",
+
+				connectWith:"#mydata tbody",
+
+				cancel:".mov"
+				// cancelက လုံး၀ကိုရွှေ့လို့ကိုမရဘူး
+
+
+			});
+
+
+		});
+
+	</script>
+
+</body>
+</html>

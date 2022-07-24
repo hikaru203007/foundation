@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UI datepicker Method</title>
+	<link href="./libs/jquery-ui-1.13.1/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+		
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.container{
+			width: 900px;
+			background: #f4f4f4;
+			padding:20px;
+		}
+
+		.form-group{
+			margin:20px 0px;
+		}
+
+		.form-group label{
+			display: block;
+			font-size: 20px;
+			margin-bottom: 20px;
+
+		}
+
+		.justify-content-end{
+			display: flex;
+			justify-content: end;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+
+		<form action="" method="">
+
+			<div class="form-group">
+				<label for="workingday">Working Day</label>
+				<div id="workingday"></div>
+			</div>
+
+			<div class="form-group">
+				<label for="multiview">Multi Views</label>
+				<div id="multiviews"></div>
+			</div>
+
+			<div class="justify-content-end">
+				<button type="submit" id="btn" class="btn">Submit</button>
+			</div>
+			
+		</form>
+		
+	</div>
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+	<script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			// console.log("hi");
+
+			$("#workingday").datepicker();
+
+			$("#multiviews").datepicker({
+				numberOfMonths:3,
+				// 3ဆိုရင် calendar(3)ခုပေါ်တယ် (၄)ဆိုရင် (၄)ခု default is 1.
+
+				// dateFormat:"yy-mm-dd",//2022-07-04
+				// dateFormat:"dd-mm-yy",
+				// dateFormat:"dd-MM-yy",//04-July-2022
+				dateFormat:"dd-mm-y"
+			});
+			
+
+			$("#btn").button({
+				icons:{
+					primary:"ui-icon-refresh"
+				}
+			}).click(function(e){
+				console.log("i am workingday");
+
+				var getwokingday = $("#workingday").val();
+				var getmultiviews = $("#multiviews").val();
+
+				//format mm//dd/yy
+				console.log("this is workingday =", getwokingday);
+				console.log("this is multi views =",getmultiviews);
+
+				e.preventDefault();
+			});
+
+		});
+	</script>
+
+</body>
+</html>

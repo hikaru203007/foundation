@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UI tooltip Method</title>
+	<link  href="./libs/jquery-ui-1.13.1/jquery-ui.min.css"  rel="stylesheet" type="text/css"/>
+	<style type="text/css">
+		
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.container{
+			width: 900px;
+			background: #f4f4f4;
+			padding: 20px;
+		}
+
+		abbr{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+
+		<h3>Welcome to jQuery Tooltip ! </h3>
+		<p><a href="#" id="ttone" title="This is Tooltip of jQuery UI !">it is used </a> in conjunction with a cursor, when a user hovers the poiner over an item without clicking.</p>
+		
+		<!-- <p><abbr id="ttone" title="This is Tooltip of jQuery UI">it is used </abbr> in conjunction with a cursor, when a user hovers the poiner over an item without clicking.</p> -->
+
+		<form action="" method="">
+			<div class="form-group">
+				<label for="dob">Date of Birth</label>
+				<input type="text" name="dob" id="dob" class="form-control" title="Your age must over 18" autocomplete="off"/>
+			</div>
+		</form>
+	</div>
+
+
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+	<script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			// console.log('hi');
+
+			// $("#ttone").tooltip();
+
+			//$("#ttone").tooltip({
+				// show:3000,
+				// hide:2000
+
+
+				// show:"bounce",
+				// hide:"explode"
+
+				// show:{
+				// 	effect:"shake",
+				// 	duration:2000
+				// },
+				// hide:{
+				// 	effect:"explode",
+				// 	duration:3000
+				// }
+
+
+				//track:true,//pointerတင်ရင်တင်တဲ့အတိုင်း tooltipကလိုက်ရွေ့ပေးတယ်
+
+				// content:"This is jQuery UI. Thanks for using our libs.",
+				// titleချိန်းရင် contentနဲ့ချိန်းတာ
+
+				//content:function(){
+					// return "<img src='./img/logo1.png' width='150px' />"
+
+			// 		return "<img src='./img/logo1.png' width='150px' /><h5>This is our company logo</h5> <small>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </small>";
+
+			// 	}
+
+
+
+			// });
+
+			// $("#dob").datepicker().tooltip();
+
+			$(document).tooltip();
+			//documentဆိုတာရှိသမျှအရာကို tooltipပေးတာ
+		});
+
+	</script>
+
+
+</body>
+</html>
