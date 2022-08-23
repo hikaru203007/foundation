@@ -1,0 +1,34 @@
+/*cssမှာ media="print" ရေးလိုက်တာ cssမှာ @media printဆိုပြီး ရေးစရာမလိုတော့ဘူး.printကိုဘုံထုတ်ပြီး ရေးလို့ရတယ်*/
+
+body{
+	color:blue;
+}
+
+.print-btn{
+	display: none;
+
+}
+
+.pagebreak{
+	page-break-after: always;
+}
+
+.header{
+	position: static;
+
+	-webkit-print-color-adjust:exact;
+}
+/*static မဟုတ်ထားရင် pageတိုင်း header ပါနေမယ်နော်*/
+
+.content{
+	-webkit-print-color-adjust:exact;
+	/*printမှာ အရောင်တွေ ပါချ်ရင် သုံးတယ်*/
+	padding:0 50px;
+	margin: 0 auto;
+}
+
+@page{
+	size: legal;
+	margin:0;
+	
+}
